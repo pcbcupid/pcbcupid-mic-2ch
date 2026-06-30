@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "ef4a1ef9-5df9-4dcd-b33a-49951c07b5cb")
 	(paper "A4")
 	(title_block
@@ -13,7 +13,9 @@
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x05"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -80,30 +82,19 @@
 			)
 			(symbol "Conn_01x05_1_1"
 				(rectangle
-					(start -1.27 -4.953)
-					(end 0 -5.207)
+					(start -1.27 6.35)
+					(end 1.27 -6.35)
 					(stroke
-						(width 0.1524)
+						(width 0.254)
 						(type default)
 					)
 					(fill
-						(type none)
+						(type background)
 					)
 				)
 				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
+					(start -1.27 5.207)
+					(end 0 4.953)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -124,8 +115,8 @@
 					)
 				)
 				(rectangle
-					(start -1.27 5.207)
-					(end 0 4.953)
+					(start -1.27 0.127)
+					(end 0 -0.127)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -135,14 +126,25 @@
 					)
 				)
 				(rectangle
-					(start -1.27 6.35)
-					(end 1.27 -6.35)
+					(start -1.27 -2.413)
+					(end 0 -2.667)
 					(stroke
-						(width 0.254)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
-						(type background)
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 				(pin passive line
@@ -236,9 +238,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:C"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0.254)
 			)
@@ -311,7 +316,7 @@
 			(symbol "C_0_1"
 				(polyline
 					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
+						(xy -2.032 0.762) (xy 2.032 0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -323,7 +328,7 @@
 				)
 				(polyline
 					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -372,9 +377,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:R"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -493,6 +501,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "ICS-43434:ICS-43434"
 			(pin_names
@@ -536,16 +545,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MF" "TDK InvenSense"
+			(property "Description" "Multi-Mode Microphone with I2S Digital Output"
 				(at 0 0 0)
 				(effects
 					(font
@@ -555,7 +555,7 @@
 					(hide yes)
 				)
 			)
-			(property "DESCRIPTION" "Multi-Mode Microphone with I2S Digital Output"
+			(property "MF" "TDK InvenSense"
 				(at 0 0 0)
 				(effects
 					(font
@@ -678,24 +678,6 @@
 					)
 				)
 				(pin power_in line
-					(at 12.7 -10.16 180)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
 					(at 12.7 10.16 180)
 					(length 5.08)
 					(name "VDD"
@@ -713,19 +695,17 @@
 						)
 					)
 				)
-			)
-			(symbol "ICS-43434_1_0"
-				(pin passive line
-					(at -12.7 0 0)
+				(pin power_in line
+					(at 12.7 -10.16 180)
 					(length 5.08)
-					(name "WS"
+					(name "GND"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "1"
+					(number "3"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -733,6 +713,8 @@
 						)
 					)
 				)
+			)
+			(symbol "ICS-43434_1_0"
 				(pin passive line
 					(at -12.7 5.08 0)
 					(length 5.08)
@@ -744,6 +726,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -12.7 0 0)
+					(length 5.08)
+					(name "WS"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -788,6 +788,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "ICS-43434_1"
 			(pin_names
@@ -831,16 +832,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MF" "TDK InvenSense"
+			(property "Description" "Multi-Mode Microphone with I2S Digital Output"
 				(at 0 0 0)
 				(effects
 					(font
@@ -850,7 +842,7 @@
 					(hide yes)
 				)
 			)
-			(property "DESCRIPTION" "Multi-Mode Microphone with I2S Digital Output"
+			(property "MF" "TDK InvenSense"
 				(at 0 0 0)
 				(effects
 					(font
@@ -973,24 +965,6 @@
 					)
 				)
 				(pin power_in line
-					(at 12.7 -10.16 180)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
 					(at 12.7 10.16 180)
 					(length 5.08)
 					(name "VDD"
@@ -1008,19 +982,17 @@
 						)
 					)
 				)
-			)
-			(symbol "ICS-43434_1_1_0"
-				(pin passive line
-					(at -12.7 0 0)
+				(pin power_in line
+					(at 12.7 -10.16 180)
 					(length 5.08)
-					(name "WS"
+					(name "GND"
 						(effects
 							(font
 								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "1"
+					(number "3"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -1028,6 +1000,8 @@
 						)
 					)
 				)
+			)
+			(symbol "ICS-43434_1_1_0"
 				(pin passive line
 					(at -12.7 5.08 0)
 					(length 5.08)
@@ -1039,6 +1013,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -12.7 0 0)
+					(length 5.08)
+					(name "WS"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -1083,12 +1075,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+3.3V"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1160,7 +1157,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -1172,7 +1169,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -1203,12 +1200,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1299,12 +1301,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:PWR_FLAG"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1395,115 +1402,8 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
-	)
-	(junction
-		(at 110.49 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "45ae0446-ce1d-4d60-bdea-094076da6fdb")
-	)
-	(junction
-		(at 110.49 102.87)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b4e5a676-6915-4545-a9cb-27b77c6e12d6")
-	)
-	(junction
-		(at 175.26 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ea169841-1ccb-4715-9196-63c13c92a33f")
-	)
-	(wire
-		(pts
-			(xy 224.79 86.36) (xy 217.17 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f791835-7b7a-45d3-8eb9-bac754b62e7a")
-	)
-	(wire
-		(pts
-			(xy 175.26 82.55) (xy 186.69 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1df4d411-8182-4a95-964f-22cd3d66824c")
-	)
-	(wire
-		(pts
-			(xy 149.86 87.63) (xy 142.24 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3acdc33c-ff84-484b-9a73-89a5a026e29e")
-	)
-	(wire
-		(pts
-			(xy 224.79 91.44) (xy 217.17 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c3dbe2a-7ea9-49e3-a273-84827cf37442")
-	)
-	(wire
-		(pts
-			(xy 224.79 83.82) (xy 217.17 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4960359a-b845-4d5a-9c4c-c658e005a682")
-	)
-	(wire
-		(pts
-			(xy 81.28 83.82) (xy 81.28 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4e884b8e-9114-4a77-aa4f-99c980237da2")
-	)
-	(wire
-		(pts
-			(xy 142.24 87.63) (xy 142.24 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8295fec8-0550-4a79-aa68-23a9184fc903")
-	)
-	(wire
-		(pts
-			(xy 110.49 82.55) (xy 119.38 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a555ff85-23d9-44dd-b6a5-31b5c2f2093d")
-	)
-	(wire
-		(pts
-			(xy 85.09 87.63) (xy 81.28 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a5f6fbc7-13ad-4771-b1bf-0ff6a1aa4990")
 	)
 	(rectangle
 		(start 135.89 66.04)
@@ -1528,25 +1428,6 @@
 			(type none)
 		)
 		(uuid edf38647-d100-4a61-9dde-550d20138c98)
-	)
-	(text_box ""
-		(exclude_from_sim no)
-		(at 199.39 66.04 0)
-		(size 55.88 48.26)
-		(stroke
-			(width 0)
-			(type dash_dot_dot)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "c1636fd8-1d58-48dd-892d-e8dbe37a2fc7")
 	)
 	(text "SYSTEM MASTER INPUT"
 		(exclude_from_sim no)
@@ -1587,9 +1468,156 @@
 		)
 		(uuid "c301b283-3918-46d8-916e-e8c47cb70c65")
 	)
+	(text_box ""
+		(exclude_from_sim no)
+		(at 199.39 66.04 0)
+		(size 55.88 48.26)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type dash_dot_dot)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "c1636fd8-1d58-48dd-892d-e8dbe37a2fc7")
+	)
+	(junction
+		(at 110.49 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "45ae0446-ce1d-4d60-bdea-094076da6fdb")
+	)
+	(junction
+		(at 110.49 102.87)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b4e5a676-6915-4545-a9cb-27b77c6e12d6")
+	)
+	(junction
+		(at 175.26 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ea169841-1ccb-4715-9196-63c13c92a33f")
+	)
+	(wire
+		(pts
+			(xy 222.25 83.82) (xy 224.79 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17ed310a-4042-46d7-afc0-89acc3af0f35")
+	)
+	(wire
+		(pts
+			(xy 175.26 82.55) (xy 186.69 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1df4d411-8182-4a95-964f-22cd3d66824c")
+	)
+	(wire
+		(pts
+			(xy 149.86 87.63) (xy 142.24 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3acdc33c-ff84-484b-9a73-89a5a026e29e")
+	)
+	(wire
+		(pts
+			(xy 217.17 88.9) (xy 224.79 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c3dbe2a-7ea9-49e3-a273-84827cf37442")
+	)
+	(wire
+		(pts
+			(xy 81.28 83.82) (xy 81.28 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e884b8e-9114-4a77-aa4f-99c980237da2")
+	)
+	(wire
+		(pts
+			(xy 222.25 93.98) (xy 224.79 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8041d876-a0ec-46a3-a274-3743c09572d0")
+	)
+	(wire
+		(pts
+			(xy 142.24 87.63) (xy 142.24 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8295fec8-0550-4a79-aa68-23a9184fc903")
+	)
+	(wire
+		(pts
+			(xy 110.49 82.55) (xy 119.38 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a555ff85-23d9-44dd-b6a5-31b5c2f2093d")
+	)
+	(wire
+		(pts
+			(xy 85.09 87.63) (xy 81.28 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5f6fbc7-13ad-4771-b1bf-0ff6a1aa4990")
+	)
+	(wire
+		(pts
+			(xy 217.17 96.52) (xy 217.17 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfcf0f52-203c-42e4-81b7-891f01ccbe94")
+	)
+	(wire
+		(pts
+			(xy 220.98 86.36) (xy 224.79 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f98466d9-dffb-43ce-b650-1390f59c5441")
+	)
 	(label "SCK"
-		(at 224.79 93.98 180)
-		(fields_autoplaced yes)
+		(at 224.79 91.44 180)
 		(effects
 			(font
 				(size 1 1)
@@ -1600,7 +1628,6 @@
 	)
 	(label "SCK"
 		(at 85.09 95.25 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.75 0.75)
@@ -1611,7 +1638,6 @@
 	)
 	(label "WS"
 		(at 149.86 92.71 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -1622,7 +1648,6 @@
 	)
 	(label "WS"
 		(at 85.09 92.71 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -1633,7 +1658,6 @@
 	)
 	(label "SCK"
 		(at 149.86 95.25 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.75 0.75)
@@ -1644,7 +1668,6 @@
 	)
 	(label "SD"
 		(at 149.86 97.79 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.75 0.75)
@@ -1654,19 +1677,17 @@
 		(uuid "9a0697b1-4c49-48dc-bda3-f377de12d0fb")
 	)
 	(label "WS"
-		(at 224.79 88.9 180)
-		(fields_autoplaced yes)
+		(at 220.98 86.36 180)
 		(effects
 			(font
 				(size 1 1)
 			)
 			(justify right bottom)
 		)
-		(uuid "a289f9ca-2e33-452b-add4-e7d4b99f8bb8")
+		(uuid "d672d7de-d460-493c-8e21-ce27bba74d29")
 	)
 	(label "SD"
 		(at 85.09 97.79 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 0.75 0.75)
@@ -1676,8 +1697,7 @@
 		(uuid "f0668948-0d0c-4698-81cd-668d1b940949")
 	)
 	(label "SD"
-		(at 224.79 91.44 180)
-		(fields_autoplaced yes)
+		(at 224.79 88.9 180)
 		(effects
 			(font
 				(size 1 1)
@@ -1696,7 +1716,7 @@
 		(dnp no)
 		(uuid "314dc275-717f-408d-8cda-86d97bd8a209")
 		(property "Reference" "C2"
-			(at 190.754 86.106 0)
+			(at 189.992 87.376 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1705,7 +1725,7 @@
 			)
 		)
 		(property "Value" "0.1u"
-			(at 190.246 88.392 0)
+			(at 189.484 85.344 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2094,6 +2114,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 222.25 93.98 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "516a581e-4f6f-43b4-879b-7f7c3315e95e")
+		(property "Reference" "#PWR05"
+			(at 222.25 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 222.25 98.298 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 222.25 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 222.25 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 222.25 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "98f518ec-e1b3-4a0f-8faa-cf04c24c587b")
+		)
+		(instances
+			(project "PCB-CUPID-MICROPHONE"
+				(path "/ef4a1ef9-5df9-4dcd-b33a-49951c07b5cb"
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x05")
 		(at 229.87 88.9 0)
 		(unit 1)
@@ -2303,16 +2388,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 217.17 86.36 0)
-		(mirror y)
+		(at 222.25 83.82 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6703b427-cb70-4284-b626-6b462b690cf7")
-		(property "Reference" "#PWR05"
-			(at 217.17 92.71 0)
+		(uuid "7991f94d-e9af-433c-aec8-6f82d44766a3")
+		(property "Reference" "#PWR012"
+			(at 222.25 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2321,7 +2406,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 213.868 86.868 0)
+			(at 222.25 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2329,7 +2414,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 217.17 86.36 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2338,7 +2423,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 217.17 86.36 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2347,7 +2432,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 217.17 86.36 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2356,12 +2441,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "e10584d5-1e55-455e-887b-4971aa1e58ca")
+			(uuid "89d27b22-2471-441c-ad34-73c544a63a4c")
 		)
 		(instances
-			(project "MIC CH2"
+			(project "PCB-CUPID-MICROPHONE"
 				(path "/ef4a1ef9-5df9-4dcd-b33a-49951c07b5cb"
-					(reference "#PWR05")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -2633,73 +2718,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 217.17 83.82 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a9dc62f1-0c87-458b-97de-6ce3d3daee62")
-		(property "Reference" "#PWR04"
-			(at 217.17 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 217.17 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 217.17 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 217.17 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 217.17 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c251728f-4768-4eb1-86ff-125f3bc74554")
-		)
-		(instances
-			(project "MIC CH2"
-				(path "/ef4a1ef9-5df9-4dcd-b33a-49951c07b5cb"
-					(reference "#PWR04")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 110.49 102.87 0)
 		(unit 1)
@@ -2899,7 +2917,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 217.17 95.25 0)
+		(at 217.17 92.71 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2908,7 +2926,7 @@
 		(dnp no)
 		(uuid "e103fd02-5421-4be6-94f9-07d9821d402a")
 		(property "Reference" "R1"
-			(at 215.646 96.012 0)
+			(at 215.646 93.472 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2917,7 +2935,7 @@
 			)
 		)
 		(property "Value" "100k"
-			(at 215.646 98.044 0)
+			(at 215.646 95.504 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2926,7 +2944,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 218.948 95.25 90)
+			(at 218.948 92.71 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2935,7 +2953,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 217.17 95.25 0)
+			(at 217.17 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2944,7 +2962,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 217.17 95.25 0)
+			(at 217.17 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3240,4 +3258,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )
